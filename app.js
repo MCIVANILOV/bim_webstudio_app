@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
 const categoryRoutes = require('./src/routes/category.routes');
@@ -85,5 +86,13 @@ MongoDBConnection.getConnection((error, connection) => {
     app.listen(config.port, () =>
         console.log(`Server started`)
     );
+
+
 })
+
+const mongoURI = process.env.MONGODB_URI; // Render сам подставит значение сюда
+
+mongoose.connect(mongoURI)
+    .then(() => console.log('MongoDB connected...'))
+    .catch(err => console.log(err));
 
