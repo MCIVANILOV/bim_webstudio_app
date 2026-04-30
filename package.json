@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build-front": "cd frontend/dist/frontend && node --max-old-space-size=450 ./node_modules/@angular/cli/bin/ng build --configuration production",
+    "build-front": "cd frontend && node --max-old-space-size=450 ./node_modules/@angular/cli/bin/ng build --configuration production",
     "install-all": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix bim_webstudio_app",
     "render-build": "npm run install-all && npm run build-front",
     "start": "node app.js"
